@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+</head>
+<body>
+    <div class="container">
+
+        <video
+            id="my-video"
+            class="video-js"
+            controls
+            preload="auto"
+            width="640"
+            height="500"
+            data-setup="{}"
+        >
+            <!-- <source src="MY_VIDEO.mp4" type="video/mp4" />
+            <source src="MY_VIDEO.webm" type="video/webm" /> -->
+            <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+                >supports HTML5 video</a
+            >
+            </p>
+        </video>
+    </div>
+
+    <button class="J_rate">rate2</button>
+    <button class="J_snapchat">抓拍</button>
+    <button class="J_record">录制</button>
+    <button class="J_stop">停止</button>
+    <button class="J_bq">标清</button>
+    <button class="J_gq">高清</button>
+
+    <div class="popup popup-hidden J_popup">hhh</div>
+
+    <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+    <script src="./assets/lab/videojs-contrib-quality-levels.min.js"></script>
+    <script src="./assets/lab/videojs-hls-quality-selector.min.js"></script>
+    <script src="./assets/lang/zh-CN.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="https://www.webrtc-experiment.com/screenshot.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

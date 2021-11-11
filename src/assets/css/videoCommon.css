@@ -1,0 +1,45 @@
+@import '//at.alicdn.com/t/font_2911597_4jgltwchzzx.css';
+
+.video-js .vjs-control.vjs-play-control,
+.video-js .vjs-control.my-back-button,
+.video-js .vjs-control.vjs-volume-panel,
+.video-js .vjs-control.my-enlarge-button,
+.video-js .vjs-control.vjs-playback-rate {
+    width: 10%;
+    max-width: 4em;
+}
+
+.video-js .vjs-volume-panel.vjs-hover .vjs-volume-control.vjs-volume-vertical {
+    left: 0 !important;
+}
+
+.video-js .vjs-volume-panel .vjs-volume-control.vjs-volume-vertical {
+    position: absolute !important;
+    width: 100%;
+    bottom: 100% !important;
+}
+
+.video-js .vjs-volume-panel > button {
+    width: 100%
+}
+
+.my-back-button .vjs-icon-placeholder:before {
+    content: '\e6c8'; 
+}
+ 
+.my-enlarge-button .vjs-icon-placeholder:before {
+    content: '\e896'; 
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 3px;
+}
+ 
+.my-back-button,
+.my-enlarge-button {
+    cursor: pointer;
+}
+
+.vjs-slider-vertical .vjs-volume-level:before {
+    left: 50%;
+    transform: translateX(-50%);
+}
