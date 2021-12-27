@@ -20,6 +20,7 @@ module.exports = {
         // 将入口文件重命名为带有20位的hash值的唯一文件
         filename: '[name].[hash].js' 
     },
+    // extends: ['videojs'],
     module: {
         rules: [
             {

@@ -13,7 +13,7 @@
     <div class="container">
 
         <video
-            id="my-video"
+            id="my-video1"
             class="video-js"
             controls
             preload="auto"
@@ -31,6 +31,9 @@
             >
             </p>
         </video>
+
+
+        <video src="" id="play-video" controls></video>
     </div>
 
     <button class="J_rate">rate2</button>
@@ -39,15 +42,21 @@
     <button class="J_stop">停止</button>
     <button class="J_bq">标清</button>
     <button class="J_gq">高清</button>
+    <button class="J_download">下载</button>
 
     <div class="popup popup-hidden J_popup">hhh</div>
 
     <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+    <!-- <script src="https://github.com/videojs/mux.js/releases/latest/download/mux.js"></script> -->
     <script src="./assets/lab/videojs-contrib-quality-levels.min.js"></script>
     <script src="./assets/lab/videojs-hls-quality-selector.min.js"></script>
     <script src="./assets/lang/zh-CN.js"></script>
-    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="./assets/lab/EBML.js"></script>
+    <script src="./assets/lab/RecordRTC.js"></script>
+    
+    <!-- <source src="https://www.webrtc-Experiment.com/EBML.js">
     <script src="https://www.webrtc-experiment.com/screenshot.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script> -->
     <script src="./js/index.js"></script>
 </body>
 </html>

@@ -26,6 +26,8 @@
   "dependencies": {
     "@ffmpeg/core": "^0.10.0",
     "@ffmpeg/ffmpeg": "^0.10.1",
-    "videojs-hls-quality-selector": "^1.1.4"
+    "video.js": "^7.17.0",
+    "videojs-hls-quality-selector": "^1.1.4",
+    "whatwg-fetch": "^3.6.2"
   }
 }

@@ -1,7 +1,7 @@
 var showDialog = false;
 var popupDom = document.querySelector(".J_popup");
 var popupDefaultClassName = "popup J_popup";
-var video = document.querySelector("#my-video");
+var video = document.querySelector("#my-video1");
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 let recorder = null;
@@ -13,9 +13,10 @@ var qualityList = []
 
 canvas.width = rect.width;
 canvas.height = rect.height;
+var player = null
 
-var player = videojs(
-  "my-video",
+player = videojs(
+  "my-video1",
   {
     language: "zh-CN",
     controlBar: {
@@ -34,7 +35,7 @@ var player = videojs(
       // },
       {
         src: "https://videos.electroteque.org/hls/bigbuckbunny/playlist.m3u8",
-        type: "application/x-mpegurl",
+        // type: "application/x-mpegurl",
       },
     ],
   },
@@ -133,7 +134,12 @@ function domEvent() {
     startBtnDom = document.querySelector(".J_record"),
     stopBtnDom = document.querySelector(".J_stop"),
     bQDom = document.querySelector('.J_bq'),
-    gQDom = document.querySelector('.J_gq');
+    gQDom = document.querySelector('.J_gq'),
+    downloadDom = document.querySelector('.J_download');
+
+  downloadDom.addEventListener("click", function () {
+    
+  });
 
   rateDom.addEventListener("click", function () {
     player.playbackRate(2);
@@ -160,24 +166,32 @@ function domEvent() {
   startBtnDom.addEventListener("click", () => {
     startRecord = true;
     recorder = RecordRTC(
-      document.querySelector("#my-video video").captureStream(),
+      document.querySelector("#my-video1 video").captureStream(),
       {
         type: "video",
+        // mimeType: 'video/webm\;codecs=h264',
+        mimeType: 'video/mp4; codecs="mpeg4, aac"',
+        recorderType: MediaStreamRecorder || StereoAudioRecorder,
+        // recorderType: WebAssemblyRecorder
       }
     );
-    recorder.startRecording();
+    
+    recorder.startRecording({
+      mimeType: 'video/mp4; codecs="mpeg4, aac"',
+    });
   });
 
   stopBtnDom.addEventListener("click", () => {
     startRecord = false;
-    recorder.stopRecording(function () {
-      let blob = recorder.getBlob();
-      // const video = document.createElement('video')
-      // video.src = URL.createObjectURL(blob)
-      // video.autoplay = true
-      // video.controls = true
-      // document.body.appendChild(video);
-      invokeSaveAsDialog(blob, "video.mp4");
+    recorder.stopRecording(function (url) {
+     document.querySelector('#play-video').src = url
+      getSeekableBlob(recorder.getBlob(), function(seekableBlob) {
+        // recorder.stream.stop();
+        recorder.destroy();
+        recorder = null;
+        console.log(seekableBlob, 88888)
+        invokeSaveAsDialog(seekableBlob, "video.webm");
+      })
     });
   });
 }
